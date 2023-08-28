@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,500;0,9..40,1000;1,9..40,1000&display=swap" rel="stylesheet">
+    <title>Racing Team Logo Overlay</title>
+    <style>
+        body {
+            font-family: Inter, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+
+        #resultContainer {
+            position: relative;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        .preview-item {
+            width: 300px;
+            height: 200px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center;
+            margin: 10px;
+            display: inline-block;
+            position: relative;
+        }
+
+        .sponsor-logo {
+            width: 80px;
+            height: 100px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+        
+                .sponsor-logo2 {
+            width: 80px;
+            height: 100px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -35%);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+    </style>
+</head>
+<body>
+<div style="text-align: center; margin-top: 50px;">
+        <h1>Preview yourself as the title sponsor of Apex Racing!</h1>
+        <input style="border-radius: 20px;" type="text" id="sponsorLogoInput" placeholder="Your Logo URL">
+        <button style="border-radius: 20px; background-color: black; color: white;" id="overlayButton">Overlay</button>
+    </div>
+    <div id="resultContainer">
+        <div class="preview-item" id="teamLogoPreview" style="background-image: url('https://media.discordapp.net/attachments/999657865893662760/1138080660439969902/Untitled.png?width=874&height=655');">
+            <div class="sponsor-logo2" id="teamLogoSponsorLogo"></div>
+        </div>
+        <div class="preview-item" id="raceCarPreview" style="background-image: url('https://i.ibb.co/QC4t5gG/Apex-Racing-1.png');">
+            <div class="sponsor-logo" id="raceCarSponsorLogo"></div>
+        </div>
+        <div class="preview-item" id="uniformPreview" style="background-image: url('https://i.ibb.co/64CxnpH/9d059936-9099-4bc3-a116-9f07c19b7b07-1.png');">
+            <div class="sponsor-logo" id="uniformSponsorLogo"></div>
+        </div>
+    </div>
+    <script>
+        const sponsorLogoInput = document.getElementById('sponsorLogoInput');
+        const overlayButton = document.getElementById('overlayButton');
+        const teamLogoSponsorLogo = document.getElementById('teamLogoSponsorLogo');
+        const raceCarSponsorLogo = document.getElementById('raceCarSponsorLogo');
+        const uniformSponsorLogo = document.getElementById('uniformSponsorLogo');
+
+        overlayButton.addEventListener('click', () => {
+            const sponsorLogoURL = sponsorLogoInput.value;
+
+            if (sponsorLogoURL) {
+                teamLogoSponsorLogo.style.backgroundImage = `url(${sponsorLogoURL})`;
+                raceCarSponsorLogo.style.backgroundImage = `url(${sponsorLogoURL})`;
+                uniformSponsorLogo.style.backgroundImage = `url(${sponsorLogoURL})`;
+            }
+        });
+    </script>
+</body>
+</html>
